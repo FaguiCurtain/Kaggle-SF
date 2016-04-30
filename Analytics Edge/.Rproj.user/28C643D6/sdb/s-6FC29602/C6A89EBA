@@ -1,0 +1,18 @@
+{
+    "contents" : "#useful links\n\n#http://mlwave.com/kaggle-ensembling-guide/\n\n#' Francois-GuillaumeRideau wrote:\n#'         @matt what does the syntax model (productline:storage:condition) mean ?\n#' \n#' My model variable looks like this: \"iPad.1:64:Used\", \"iPad.2:16:Seller.refurbished\" so in that case it is just a separator in a string.\n#' \n#' However, you can use this syntax when doing training to create a composite variable on the fly : glm(sold~productline:storage, ...)\n#' \n#' # from the winner:\n#' I was shocked I ended up in the first place in the private board (moving up 69 place). I submitted my best public score and an earlier entry. At the end, the earlier entry went from 0.852 to 0.883.\n\n# I used an ensemble of avNNet, gbm, glmnet, random forest and svm with radial kernel (either blending ensemble or linear combination optimized for AUC using optim). This link explains how to implement the blending ensemble. avNNet has the biggest impact on the final model.\n# \n# On the independent variables side, I added 2 additional variables for startprice (log and exp(-x)). I also used clustering (euclidean and Kmean) or PCA with bag of words matrix from the description field. \n# I added biddable, productionline, condition as additional words to the description field to work around the empty description field issue.\n\n\n\n# The first feature reduction method -- removing near-zero variance columns -- did not seem to hurt, where removing low importance features did. But leaving in all 115 original columns was probably not good, so some did have to go.",
+    "created" : 1438607040151.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3944623797",
+    "id" : "C6A89EBA",
+    "lastKnownWriteTime" : 1439914299,
+    "path" : "~/coursera/Analytics Edge/links.R",
+    "project_path" : "links.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

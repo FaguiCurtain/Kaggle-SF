@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://mlwave.com/kaggle-ensembling-guide/ -->
+<html lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./Kaggle Ensembling Guide _ MLWave_files/ZctBCoAwDETRC1lGV55H4lQKNYEmRXp7xZXg7i_-WyCmsUmkbO1MK4pK7Tsd4g6PUenTjLioMbL1FqTioLKVR_on_9vLbw.css" media="all">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Kaggle Ensembling Guide | MLWave</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://mlwave.com/xmlrpc.php">
+	<link rel="shortcut icon" href="http://mlwave.com/favicon2.ico"> 
+	<!--[if lt IE 9]>
+	<script src="http://mlwave.com/wp-content/themes/twentyfourteen/js/html5.js"></script>
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="MLWave » Feed" href="http://mlwave.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="MLWave » Comments Feed" href="http://mlwave.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="MLWave » Kaggle Ensembling Guide Comments Feed" href="http://mlwave.com/kaggle-ensembling-guide/feed/">
+
+<link rel="stylesheet" id="twentyfourteen-lato-css" href="./Kaggle Ensembling Guide _ MLWave_files/css" type="text/css" media="all">
+
+
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfourteen-ie-css'  href='http://mlwave.com/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript" src="./Kaggle Ensembling Guide _ MLWave_files/M9bPKixNLarUMYYydHMz04sSS1L1cjPzAA.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://mlwave.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://mlwave.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Online Learning Perceptron" href="http://mlwave.com/online-learning-perceptron/">
+<meta name="generator" content="WordPress 3.9.7">
+<link rel="canonical" href="./Kaggle Ensembling Guide _ MLWave_files/Kaggle Ensembling Guide _ MLWave.html">
+<link rel="shortlink" href="http://mlwave.com/?p=877">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<script type="text/javascript" async="" src="./Kaggle Ensembling Guide _ MLWave_files/in.php"></script><script type="text/javascript" async="" src="./Kaggle Ensembling Guide _ MLWave_files/in(1).php"></script><script type="text/javascript" async="" src="./Kaggle Ensembling Guide _ MLWave_files/in(2).php"></script><script type="text/javascript" async="" src="./Kaggle Ensembling Guide _ MLWave_files/in(3).php"></script><script type="text/javascript" async="" src="./Kaggle Ensembling Guide _ MLWave_files/in(4).php"></script><script type="text/javascript" async="" src="./Kaggle Ensembling Guide _ MLWave_files/in(5).php"></script><script type="text/javascript" async="" src="./Kaggle Ensembling Guide _ MLWave_files/in(6).php"></script><script type="text/javascript" async="" src="./Kaggle Ensembling Guide _ MLWave_files/in(7).php"></script></head>
+
+<body class="single single-post postid-877 single-format-standard custom-background masthead-fixed full-width footer-widgets singular">
+<div id="page" class="hfeed site">
+	
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="http://mlwave.com/" rel="home">MLWave</a></h1>
+
+			<div class="search-toggle">
+				<a href="http://mlwave.com/kaggle-ensembling-guide/#search-container" class="screen-reader-text">Search</a>
+			</div>
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<h1 class="menu-toggle">Primary Menu</h1>
+				<a class="screen-reader-text skip-link" href="http://mlwave.com/kaggle-ensembling-guide/#content">Skip to content</a>
+				<div class="menu-custom-menu-container"><ul id="menu-custom-menu" class="nav-menu"><li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="http://mlwave.com/about/">About</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://mlwave.com/contact/">Contact</a></li>
+</ul></div>			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+				<form role="search" method="get" class="search-form" action="http://mlwave.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>			</div>
+		</div>
+	</header><!-- #masthead -->
+
+	<div id="main" class="site-main">
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+			
+<article id="post-877" class="post-877 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized has-post-thumbnail">
+	
+	<div class="post-thumbnail">
+	<img width="1038" height="576" src="./Kaggle Ensembling Guide _ MLWave_files/stacked-wood-1038x576.jpg" class="attachment-twentyfourteen-full-width wp-post-image" alt="stacked wood">	</div>
+
+	
+	<header class="entry-header">
+		<h1 class="entry-title">Kaggle Ensembling Guide</h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="./Kaggle Ensembling Guide _ MLWave_files/Kaggle Ensembling Guide _ MLWave.html" rel="bookmark"><time class="entry-date" datetime="2015-06-11T20:39:38+00:00">June 11, 2015</time></a></span> <!--<span class="byline"><span class="author vcard"><a class="url fn n" href="http://mlwave.com/author/mladmin/" rel="author">mladmin</a></span></span>-->			<span class="comments-link"><a href="http://mlwave.com/kaggle-ensembling-guide/#comments" title="Comment on Kaggle Ensembling Guide">18 Comments</a></span>
+					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p><strong>Model ensembling is a very powerful technique to increase accuracy on a variety of ML tasks. In this article I will share my ensembling approaches for Kaggle Competitions.</strong></p>
+<p>For the first part we look at creating ensembles from submission files. The second part will look at creating ensembles through stacked generalization/blending.</p>
+<p>I answer why ensembling reduces the generalization error. Finally I show different methods of ensembling, together with their results and code to try it out for yourself.</p>
+<blockquote><p>This is how you win ML competitions: you take other peoples’ work and ensemble them together.” <cite><a href="http://cims.nyu.edu/~vitaly/">Vitaly Kuznetsov</a> NIPS2014</cite></p></blockquote>
+<p><span id="more-877"></span></p>
+<h2>Creating ensembles from submission files</h2>
+<p>The most basic and convenient way to ensemble is to ensemble Kaggle submission CSV files. You only need the predictions on the test set for these methods — no need to retrain a model. This makes it a quick way to ensemble already existing model predictions, ideal when teaming up.</p>
+<h3>Voting ensembles.</h3>
+<p>We first take a look at a simple majority vote ensemble. Let’s see why model ensembling reduces error rate and why it works better to ensemble low-correlated model predictions.</p>
+<h4>Error correcting codes</h4>
+<p>During space missions it is very important that all signals are correctly relayed.</p>
+<p>If we have a signal in the form of a binary string like:</p>
+<pre>1<strong>1</strong>10110011101111011111011011
+</pre>
+<p>and somehow this signal is corrupted (a bit is flipped) to:</p>
+<pre>1<b>0</b>10110011101111011111011011
+</pre>
+<p>then lives could be lost.</p>
+<p>A <a href="http://en.wikipedia.org/wiki/Coding_theory">coding</a> solution was found in <a href="http://en.wikipedia.org/wiki/Forward_error_correction">error correcting codes</a>. The simplest error correcting code is a <a href="http://en.wikipedia.org/wiki/Repetition_code">repetition-code</a>: Relay the signal multiple times in equally sized chunks and have a majority vote.</p>
+<pre>Original signal:
+1110110011
+
+Encoded:
+10,3 101011001111101100111110110011
+
+Decoding:
+1<b>0</b>10110011
+1<b>1</b>10110011
+1<b>1</b>10110011
+
+Majority vote:
+1<b>1</b>10110011
+</pre>
+<p>Signal corruption is a very rare occurrence and often occur in small bursts. So then it figures that it is even rarer to have a corrupted majority vote.</p>
+<p>As long as the corruption is not completely unpredictable (has a 50% chance of occurring) then signals can be repaired.</p>
+<h4>A machine learning example</h4>
+<p>Suppose we have a test set of 10 samples. The ground truth is all positive (“1″):</p>
+<pre>1111111111
+</pre>
+<p>We furthermore have 3 binary classifiers (A,B,C) with a 70% accuracy. You can view these classifiers for now as pseudo-random number generators which output a “1″ 70% of the time and a “0″ 30% of the time.</p>
+<p>We will now show how these pseudo-classifiers are able to obtain 78% accuracy through a voting ensemble.</p>
+<h5>A pinch of maths</h5>
+<p>For a majority vote with 3 members we can expect 4 outcomes:</p>
+<pre>All three are correct
+  0.7 * 0.7 * 0.7
+= 0.3429
+
+Two are correct
+  0.7 * 0.7 * 0.3
++ 0.7 * 0.3 * 0.7
++ 0.3 * 0.7 * 0.7
+= 0.4409
+
+Two are wrong
+  0.3 * 0.3 * 0.7
++ 0.3 * 0.7 * 0.3
++ 0.7 * 0.3 * 0.3
+= 0.189
+
+All three are wrong
+  0.3 * 0.3 * 0.3
+= 0.027
+</pre>
+<p>We see that most of the times (~44%) the majority vote corrects an error. This majority vote ensemble will be correct an average of ~78% (0.3429 + 0.4409 = 0.7838).</p>
+<h4>Number of voters</h4>
+<p>Like repetition codes increase in their error-correcting capability when more codes are repeated, so do ensembles usually improve when adding more ensemble members.</p>
+<p><a href="./Kaggle Ensembling Guide _ MLWave_files/Repetition_Code_On_Fading_Channel_Graph.jpg"><img class="aligncenter size-full wp-image-888" src="./Kaggle Ensembling Guide _ MLWave_files/Repetition_Code_On_Fading_Channel_Graph.jpg" alt="Repetition codes performance on graph" width="750" height="556"></a></p>
+<p>Using the same pinch of maths as above: a voting ensemble of 5 pseudo-random classifiers with 70% accuracy would be correct ~83% of the time. One or two errors are being corrected during ~66% of the majority votes. (0.36015 + 0.3087)</p>
+<h4>Correlation</h4>
+<p>When I first joined the team for KDD-cup 2014, Marios Michailidis (<a href="https://www.kaggle.com/kazanova">KazAnova</a>) proposed something peculiar. He calculated the <a href="http://onlinestatbook.com/2/describing_bivariate_data/pearson.html">Pearson correlation</a> for all our submission files and gathered a few well-performing models which were less correlated.</p>
+<p>Creating an averaging ensemble from these diverse submissions gave us the&nbsp;biggest 50-spot jump on the leaderboard. Uncorrelated submissions clearly do better when ensembled than correlated submissions. But why?</p>
+<p>To see this, let us take 3 simple models again. The ground truth is still all 1′s:</p>
+<pre>1111111100 = 80% accuracy
+1111111100 = 80% accuracy
+1011111100 = 70% accuracy.
+</pre>
+<p>These models are highly correlated in their predictions. When we take a majority vote we see no improvement:</p>
+<pre>1111111100 = 80% accuracy
+</pre>
+<p>Now we compare to 3 less-performing, but highly uncorrelated models:</p>
+<pre>1111111100 = 80% accuracy
+0111011101 = 70% accuracy
+1000101111 = 60% accuracy
+</pre>
+<p>When we ensemble this with a majority vote we get:</p>
+<pre>1111111101 = 90% accuracy
+</pre>
+<p>Which <i>is</i> an improvement: A lower correlation between ensemble model members seems to result in an increase in the error-correcting capability.</p>
+<h4>Use for Kaggle: Forest Cover Type prediction</h4>
+<p><img class="alignleft size-thumbnail wp-image-935" src="./Kaggle Ensembling Guide _ MLWave_files/forest2-150x100.png" alt="Forest" width="150" height="100">Majority votes make most sense when the evaluation metric requires hard predictions, for instance with (multiclass-) classification accuracy.</p>
+<p>The <a href="https://www.kaggle.com/c/forest-cover-type-prediction">forest cover type prediction</a> challenge uses the <a href="https://archive.ics.uci.edu/ml/datasets/Covertype">UCI Forest CoverType dataset</a>. The dataset has&nbsp;<span style="color: #123654;">54 attributes and there are 6 classes.</span></p>
+<p>We create a simple <a href="https://www.kaggle.com/triskelion/forest-cover-type-prediction/first-try-with-random-forests">starter model</a> with a 500-tree Random Forest. We then create a few more models and pick the best performing one. For this task and our model selection an ExtraTreesClassifier works best.</p>
+<h5>Weighing</h5>
+<p>We then use a weighted majority vote. Why weighing? Usually we want to give a better model more weight in a vote. So in our case we count the vote by the best model 3 times.&nbsp;The other 4 models count for one vote each.</p>
+<p>The reasoning is as follows: The only way for the inferior models to overrule the best model (expert) is for them to&nbsp;collectively (and confidently) agree on an alternative.</p>
+<p>We can expect this ensemble to repair a few erroneous choices by the best model, leading to a small improvement only.&nbsp;That’s our punishment for forgoing a democracy and creating a Plato’s <i>Republic</i>.</p>
+<blockquote><p>“Every city encompasses two cities that are at war with each other.” <cite>Plato in <i>The Republic</i></cite></p></blockquote>
+<p>Table 1. shows the result of training 5 models, and the resulting score when combining these with a weighted majority vote.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Public Accuracy Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GradientBoostingMachine</td>
+<td>0.65057</td>
+</tr>
+<tr>
+<td>RandomForest Gini</td>
+<td>0.75107</td>
+</tr>
+<tr>
+<td>RandomForest Entropy</td>
+<td>0.75222</td>
+</tr>
+<tr>
+<td>ExtraTrees Entropy</td>
+<td>0.75524</td>
+</tr>
+<tr>
+<td>ExtraTrees Gini (Best)</td>
+<td><b>0.75571</b></td>
+</tr>
+<tr>
+<td>Voting Ensemble (Democracy)</td>
+<td>0.75337</td>
+</tr>
+<tr>
+<td>Voting Ensemble (3*Best vs. Rest)</td>
+<td><b>0.75667</b></td>
+</tr>
+</tbody>
+</table>
+<h4>Use for Kaggle: CIFAR-10 Object detection in images</h4>
+<p><img class="alignright size-thumbnail wp-image-936" src="./Kaggle Ensembling Guide _ MLWave_files/cifar2-150x100.png" alt="CIFAR-10" width="150" height="100">CIFAR-10 is another multi-class classification challenge where accuracy matters.</p>
+<p>Our team leader for this challenge, <a href="https://www.kaggle.com/philculliton">Phil Culliton</a>, first found the best setup to <a href="http://blog.kaggle.com/2015/01/02/cifar-10-competition-winners-interviews-with-dr-ben-graham-phil-culliton-zygmunt-zajac/">replicate a good model</a> from dr. Graham.</p>
+<p>Then he used a voting ensemble of around 30 convnets submissions (all scoring above 90% accuracy). The best&nbsp;single model of the ensemble scored <strong>0.93170</strong>.</p>
+<p>A voting ensemble of 30 models scored <strong>0.94120</strong>. A ~0.01 reduction in error rate, pushing the resulting score beyond the <a href="http://karpathy.github.io/2014/09/02/what-i-learned-from-competing-against-a-convnet-on-imagenet/">estimated human classification accuracy</a>.</p>
+<h4>Code</h4>
+<p>We have a sample <a href="https://github.com/MLWave/Kaggle-Ensemble-Guide/blob/master/kaggle_vote.py">voting script</a> you could use at the MLWave Github repo. It operates on a directory of Kaggle submissions and creates a new submission.</p>
+<blockquote><p>Ensembling. Train 10 neural networks and average their predictions. It’s a fairly trivial technique that results in easy, sizeable performance improvements.</p>
+<p>One may be mystified as to why averaging helps so much, but there is a simple reason for the effectiveness of averaging. Suppose that two classifiers have an error rate of 70%. Then, when they agree they are right. But when they disagree, one of them is often right, so now the average prediction will place much more weight on the correct answer.</p>
+<p>The effect will be especially strong whenever the network is confident when it’s right and unconfident when it’s wrong. <cite>Ilya Sutskever <a href="http://yyue.blogspot.com/2015/01/a-brief-overview-of-deep-learning.html">A brief overview of Deep Learning.</a></cite></p></blockquote>
+<h3>Averaging</h3>
+<p>Averaging works well for a wide range of problems (both classification and regression) and metrics (AUC, squared error or logaritmic loss).</p>
+<p>There is not much more to averaging than taking the mean of individual model predictions. An often heard shorthand for this on Kaggle is “bagging submissions”.</p>
+<p>Averaging predictions often reduces overfit. You ideally want a smooth separation between classes, and a single model’s predictions can be a little rough around the edges.</p>
+<p><img class="aligncenter size-full wp-image-904" src="./Kaggle Ensembling Guide _ MLWave_files/overfit.png" alt="Learning from noise" width="531" height="248"></p>
+<p>The above image is from the Kaggle competition: <a href="https://www.kaggle.com/c/overfitting">Don’t Overfit!</a>, the black line shows a better separation than the green line. The green line has learned from noisy datapoints. No worries! Averaging multiple different green lines should bring us closer to the black line.</p>
+<p>Remember our goal is not to memorize the training data (there are far more efficient ways to store data than inside a random forest), but to generalize well to new unseen data.</p>
+<h4>Kaggle use:&nbsp;Bag of Words Meets Bags of Popcorn</h4>
+<p><img class="alignleft size-thumbnail wp-image-933" src="./Kaggle Ensembling Guide _ MLWave_files/popcorn-150x150.png" alt="Icons" width="150" height="150">This is a <a href="https://www.kaggle.com/c/word2vec-nlp-tutorial/">movie sentiment analysis contest</a>. In a previous post we used an <a href="http://mlwave.com/online-learning-perceptron/">online perceptron script</a> to get 95.2 AUC.</p>
+<p>The perceptron is a decent linear classifier which is guaranteed to find a separation if the data is linearly separable. This is a welcome property to have, but you have to realize a perceptron stops learning once this separation is reached. It does not necessarily find the best separation for new data.</p>
+<p>So what would happen if we initialize 5 perceptrons with random weights and combine their predictions through an average? Why, we get an improvement on the test set!</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Public AUC Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perceptron</td>
+<td>0.95288</td>
+</tr>
+<tr>
+<td>Random Perceptron</td>
+<td>0.95092</td>
+</tr>
+<tr>
+<td>Random Perceptron</td>
+<td>0.95128</td>
+</tr>
+<tr>
+<td>Random Perceptron</td>
+<td>0.95118</td>
+</tr>
+<tr>
+<td>Random Perceptron</td>
+<td>0.95072</td>
+</tr>
+<tr>
+<td>Bagged Perceptrons</td>
+<td><b>0.95427</b></td>
+</tr>
+</tbody>
+</table>
+<p>Above results also illustrate that ensembling can (temporarily) save you from having to learn about the finer details and inner workings of a specific Machine Learning algorithm. If it works, great! If it doesn’t, not much harm done.</p>
+<p><img class="aligncenter size-full wp-image-909" src="./Kaggle Ensembling Guide _ MLWave_files/perceptron-bagging.png" alt="Perceptron bagging" width="550" height="329"></p>
+<p>You also won’t get a penalty for averaging 10 exactly the same linear regressions. Bagging a single poorly cross-validated and overfitted submission may even bring you some gain through adding diversity (thus less correlation).</p>
+<h4>Code</h4>
+<p>We have posted a simple <a href="https://github.com/MLWave/Kaggle-Ensemble-Guide/blob/master/kaggle_avg.py">averaging script</a> on Github that takes as input a directory of .csv files and outputs an averaged submission.</p>
+<h3>Rank averaging</h3>
+<p>When averaging the outputs from multiple different models some problems can pop up. Not all predictors are perfectly <a href="https://www.kaggle.com/cbourguignat/otto-group-product-classification-challenge/why-calibration-works">calibrated</a>: they may be over- or underconfident when predicting a low or high probability. Or the predictions clutter around a certain range.</p>
+<p>In the extreme case you may have a submission which looks like this:</p>
+<pre>Id,Prediction
+1,0.35000056
+2,0.35000002
+3,0.35000098
+4,0.35000111
+</pre>
+<p>Such a prediction may do well on the leaderboard when the evaluation metric is ranking or threshold based like AUC. But when averaged with another model like:</p>
+<pre>Id,Prediction
+1,0.57
+2,0.04
+3,0.96
+4,0.99
+</pre>
+<p>it will not change the ensemble much at all.</p>
+<p>Our&nbsp;solution is to first turn the predictions into ranks, then averaging these ranks.</p>
+<pre>Id,Rank,Prediction
+1,1,0.35000056
+2,0,0.35000002
+3,2,0.35000098
+4,3,0.35000111
+</pre>
+<p>After normalizing the averaged ranks between 0 and 1 you are sure to get an even distribution in your predictions. The resulting rank-averaged ensemble:</p>
+<pre>Id,Prediction
+1,0.33
+2,0.0
+3,0.66
+4,1.0
+</pre>
+<h4>Historical ranks.</h4>
+<p>Ranking requires a test set. So what do you do when want predictions for&nbsp;a single new sample? You could rank it together with the old test set, but this will increase the complexity of your solution.</p>
+<p>A solution is using historical ranks. Store the old test set predictions together with their rank. Now when you predict a new test sample like “0.35000110″ you find the closest old prediction and take its historical rank (in this case rank “3″ for “0.35000111″).</p>
+<h4>Kaggle use case: Acquire Valued Shoppers Challenge</h4>
+<p><img class="alignright size-thumbnail wp-image-938" src="./Kaggle Ensembling Guide _ MLWave_files/shoppers-150x100.png" alt="Scissors" width="150" height="100">Ranking averages do well on ranking and threshold-based metrics (like AUC) and search-engine quality metrics (like average precision at k).</p>
+<p>The goal of the <a href="https://www.kaggle.com/c/acquire-valued-shoppers-challenge">shopper challenge</a> was to rank the chance that a shopper would become a repeat customer.</p>
+<p>Our team first took an average of multiple Vowpal Wabbit models together with an R GLMNet model.&nbsp;Then we used a ranking average to improve the exact same ensemble.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Public</th>
+<th>Private</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vowpal Wabbit A</td>
+<td>0.60764</td>
+<td>0.59962</td>
+</tr>
+<tr>
+<td>Vowpal Wabbit B</td>
+<td>0.60737</td>
+<td>0.59957</td>
+</tr>
+<tr>
+<td>Vowpal Wabbit C</td>
+<td>0.60757</td>
+<td>0.59954</td>
+</tr>
+<tr>
+<td>GLMNet</td>
+<td>0.60433</td>
+<td>0.59665</td>
+</tr>
+<tr>
+<td>Average Bag</td>
+<td>0.60795</td>
+<td>0.60031</td>
+</tr>
+<tr>
+<td>Rank average Bag</td>
+<td>0.61027</td>
+<td><strong>0.60187</strong></td>
+</tr>
+</tbody>
+</table>
+<p>I already wrote about the <a href="http://mlwave.com/lessons-from-avito-prohibited-content-kaggle/">Avito challenge</a> where rank averaging gave us a hefty increase.</p>
+<p>Finally, when weighted rank averaging&nbsp;the bagged perceptrons from the previous chapter (1x) with the new <a href="http://fastml.com/classifying-text-with-bag-of-words-a-tutorial/">bag-of-words tutorial</a> (3x) on fastML.com we improve that model’s performance from&nbsp;0.96328 AUC to&nbsp;<span style="color: #444444;">0.96461 AUC.</span></p>
+<h4>Code</h4>
+<p>A simple work-horse <a href="https://github.com/MLWave/Kaggle-Ensemble-Guide/blob/master/kaggle_rankavg.py">rank averaging script</a> is added to the MLWave Github repo.</p>
+<blockquote><p>Competitions are effective because there are any number of techniques that can be applied to any modeling problem, but we can’t know in advance which will be most effective. <cite>Anthony Goldbloom <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5693459&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel5%2F5691154%2F5693274%2F05693459.pdf%3Farnumber%3D5693459">Data Prediction Competitions — Far More than Just a Bit of Fun</a></cite></p></blockquote>
+<p><img class="aligncenter size-full wp-image-961" src="./Kaggle Ensembling Guide _ MLWave_files/blending.jpg" alt="Whiskey blending" width="500" height="281"></p>
+<p><small>From ‘How Scotch Blended Whisky is Made’ on <a href="https://www.youtube.com/watch?v=8vCZVsy0jIY">Youtube</a></small></p>
+<h2>Stacked Generalization &amp; Blending</h2>
+<p>Averaging prediction files is nice and easy, but it’s not the only method that the <a href="https://www.kaggle.com/users">top Kagglers</a> are using. The serious gains start with stacking and blending. Hold on to your top-hats and petticoats: Here be dragons. With 7 heads. Standing on top of 30 other dragons.</p>
+<h3>Netflix</h3>
+<p>Netflix organized and popularized the first data science competitions. Competitors in the movie recommendation challenge really pushed the state of the art on ensemble creation, perhaps so much so that Netflix decided <a href="http://techblog.netflix.com/2012/04/netflix-recommendations-beyond-5-stars.html">not to implement</a> the winning solution in production. That one was simply too complex.</p>
+<p>Nevertheless, a number of papers and novel methods resulted from this&nbsp;challenge:</p>
+<ul>
+<li><a href="http://arxiv.org/pdf/0911.0460.pdf">Feature-Weighted Linear Stacking</a></li>
+<li><a href="http://elf-project.sourceforge.net/CombiningPredictionsForAccurateRecommenderSystems.pdf">Combining Predictions for Accurate Recommender Systems</a></li>
+<li><a href="http://www.netflixprize.com/assets/GrandPrize2009_BPC_BigChaos.pdf">The BigChaos Solution to the Netflix Prize</a></li>
+</ul>
+<p>All are interesting, accessible and relevant reads when you want to improve your Kaggle game.</p>
+<p><a href="./Kaggle Ensembling Guide _ MLWave_files/NetflixPrize.png"><img class="aligncenter size-full wp-image-956" src="./Kaggle Ensembling Guide _ MLWave_files/NetflixPrize.png" alt="Netflix Prize Leaderboard" width="771" height="482"></a></p>
+<blockquote><p>This is a truly impressive compilation and culmination of years of work, blending hundreds of predictive models to finally cross the finish line. We evaluated some of the new methods offline but the additional accuracy gains that we measured did not seem to justify the engineering effort needed to bring them into a production environment. <cite>Netflix Engineers</cite></p></blockquote>
+<h3>Stacked generalization</h3>
+<p>Stacked generalization was introduced by Wolpert in a <a href="http://www.researchgate.net/profile/David_Wolpert/publication/222467943_Stacked_generalization/links/0c960529e2b49a95f2000000.pdf">1992 paper</a>, 2 years before the seminal&nbsp;Breiman paper “<a href="http://statistics.berkeley.edu/sites/default/files/tech-reports/421.pdf">Bagging Predictors</a>“. Wolpert is famous for another very popular machine learning theorem: “<a href="http://en.wikipedia.org/wiki/No_free_lunch_in_search_and_optimization">There is no free lunch in search and optimization</a>“.</p>
+<p>The basic idea behind stacked generalization is to use a pool of base classifiers, then using another classifier to combine their predictions, with the aim of reducing the generalization error.</p>
+<p>Let’s say you want to do 2-fold stacking:</p>
+<ul>
+<li>Split the train set in 2 parts: train_a and train_b</li>
+<li>Fit a first-stage model on train_a and create predictions for train_b</li>
+<li>Fit the same model on train_b and create predictions for train_a</li>
+<li>Finally fit the model on the entire train set and create predictions for the test set.</li>
+<li>Now train a second-stage stacker model on the probabilities from the first-stage model(s).</li>
+</ul>
+<p>A stacker model gets more information on the problem space by using the first-stage predictions as features, than if it was trained in isolation.</p>
+<blockquote><p>It is usually desirable that the level 0 generalizers are of all “types”, and not just simple variations of one another (e.g., we want surface-fitters, Turing-machine builders, statistical extrapolators, etc., etc.). In this way all possible ways of examining the learning set and trying to extrapolate from it are being exploited. This is part of what is meant by saying that the level 0 generalizers should “span the space”.</p>
+<p>[...] stacked generalization is a means of non-linearly combining generalizers to make a new generalizer, to try to optimally integrate what each of the original generalizers has to say about the learning set. The more each generalizer has to say (which isn’t duplicated in what the other generalizer’s have to say), the better the resultant stacked generalization. <cite>Wolpert (1992) Stacked Generalization</cite></p></blockquote>
+<h3>Blending</h3>
+<p>Blending is a word introduced by the Netflix winners. It is very close to stacked generalization, but a bit simpler and less risk of an information leak. Some researchers use “stacked ensembling” and “blending” interchangeably.</p>
+<p>With blending, instead of creating out-of-fold predictions for the train set, you create a small holdout set of say 10% of the train set. The stacker model then trains on this holdout set only.</p>
+<p>Blending has a few benefits:</p>
+<ul>
+<li>It is simpler than stacking.</li>
+<li>It wards against an information leak: The generalizers and stackers use different data.</li>
+<li>You do not need to share a seed for stratified folds with your teammates. Anyone can throw models in the ‘blender’ and the blender decides if it wants to keep that model or not.</li>
+</ul>
+<p>The cons are:</p>
+<ul>
+<li>You use less data overall</li>
+<li>The final model may overfit to the holdout set.</li>
+<li>Your CV is more solid with stacking (calculated over more folds) than using a single small holdout set.</li>
+</ul>
+<p>As for performance, both techniques are able to give similar results, and it seems to be a matter of preference and skill which you prefer. I myself prefer stacking.</p>
+<p>If you can not choose, you can always do both. Create stacked ensembles with stacked generalization and out-of-fold predictions. Then use a holdout set to further combine these models at a third stage.</p>
+<h3>Stacking with logistic regression</h3>
+<p>Stacking with logistic regression is one of the more basic and traditional ways of stacking. A <a href="https://github.com/emanuele/kaggle_pbr/blob/master/blend.py">script</a> I found by <a href="https://www.kaggle.com/emanuele">Emanuele Olivetti</a> helped me understand this.</p>
+<p>When creating predictions for the test set, you can do that in one go, or take an average of the out-of-fold predictors. Though taking the average is the clean and more accurate way to do this, I still prefer to do it in one go as that slightly lowers both model and coding complexity.</p>
+<h4>Kaggle use: “Papirusy z Edhellond”</h4>
+<p><img class="alignleft size-thumbnail wp-image-995" src="./Kaggle Ensembling Guide _ MLWave_files/spam-competition-150x100.png" alt="Gondor" width="150" height="100">I used the above blend.py script by Emanuele to compete in this inClass competition. Stacking 8 base models (diverse ET’s, RF’s and GBM’s) with&nbsp;Logistic Regression gave me my second best score of&nbsp;0.99409 accuracy, good for first place.</p>
+<h4>Kaggle use:&nbsp;KDD-cup 2014</h4>
+<p>Using this script I was able to improve a model from <a href="https://www.kaggle.com/yansoftware">Yan Xu</a>. Her model before stacking scored ~0.605 AUC. With stacking this improved to ~0.625.</p>
+<h3>Stacking with non-linear algorithms</h3>
+<p>Popular non-linear algorithms for stacking are GBM, KNN, NN, RF and ET.</p>
+<p>Non-linear stacking with the original features on multiclass problems gives surprising gains. Obviously the first-stage predictions are very informative&nbsp;and get the highest feature importance. Non-linear algorithms find useful interactions between the original features and the meta-model features.</p>
+<h4>Kaggle use: TUT Headpose Estimation Challenge</h4>
+<p><img class="alignright size-thumbnail wp-image-997" src="./Kaggle Ensembling Guide _ MLWave_files/tut-headpose2-150x100.png" alt="TUT headpose" width="150" height="100">&nbsp;The <a href="https://inclass.kaggle.com/c/tut-head-pose-estimation-challenge">TUT Headpose Estimation</a> challenge can be treated as a multi-class multi-label classification challenge.</p>
+<p>For every label a separate ensemble model was trained.</p>
+<p>The following table shows the result of training individual models, and their improved scores when stacking the predicted class probabilities with&nbsp;an extremely randomized trees model.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Public&nbsp;MAE</th>
+<th>Private&nbsp;MAE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random Forests 500 estimators</td>
+<td>6.156</td>
+<td>6.546</td>
+</tr>
+<tr>
+<td>Extremely Randomized Trees 500 estimators</td>
+<td>6.317</td>
+<td>6.666</td>
+</tr>
+<tr>
+<td>KNN-Classifier with 5 neighbors</td>
+<td>6.828</td>
+<td>7.460</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>6.694</td>
+<td>6.949</td>
+</tr>
+<tr>
+<td>Stacking with Extremely Randomized Trees</td>
+<td><b>4.772</b></td>
+<td><b>4.718</b></td>
+</tr>
+</tbody>
+</table>
+<p>We see that stacked generalization with standard models is able to reduce the error by around 30%(!).</p>
+<p>Read more about this result in the paper:&nbsp;<a href="http://vision.cs.tut.fi/data/publications/scia2015_hpe.pdf">Computer Vision for Head Pose Estimation: Review of a Competition</a>.</p>
+<h4>Code</h4>
+<p>You can find a function to create <a href="https://github.com/MLWave/Kaggle-Ensemble-Guide/blob/master/blend_proba.py">out-of-fold probability predictions</a> in the MLWave Github repo. You could&nbsp;use numpy horizontal stacking (hstack) to create blended datasets.</p>
+<h3>Feature weighted linear stacking</h3>
+<p>Feature-weighted linear stacking stacks engineered meta-features together with model predictions. The hope is that the stacking model learns which base model is the best predictor for samples with a certain feature value. Linear algorithms are used to keep the resulting model fast and simple to inspect.</p>
+<p><img class="aligncenter size-full wp-image-948" src="./Kaggle Ensembling Guide _ MLWave_files/feature-weighted-stacking.png" alt="Blended prediction" width="492" height="93"></p>
+<p>Vowpal Wabbit can implement a form of feature-weighted linear stacking out of the box. If we have a train set like:</p>
+<pre><small>1 |f f_1:0.55 f_2:0.78 f_3:7.9 |s RF:0.95 ET:0.97 GBM:0.92</small>
+</pre>
+<p>We can add quadratic feature interactions between the <code>s</code>-featurespace and the <code>f</code>-featurespace by adding <code>-q fs</code>. The features in the <code>f</code>-namespace can be engineered meta-features like in the paper, or they can be the original features.</p>
+<h3>Quadratic linear stacking of models</h3>
+<p>This did not have a name so I made one up. It is very similar to feature-weighted linear stacking, but it creates combinations of model predictions. This improved the score on numerous experiments, most noticeably on the <a href="http://www.drivendata.org/competitions/6/">Modeling Women’s Healthcare Decision competition</a> on DrivenData.</p>
+<p>Using the same VW training set as before:</p>
+<pre><small>1 |f f_1:0.55 f_2:0.78 f_3:7.9 |s RF:0.95 ET:0.97 GBM:0.92</small>
+</pre>
+<p>We can train with <code>-q ss</code> creating quadratic feature interactions (<code>RF*GBM</code>) between the model predictions.</p>
+<p>This&nbsp;can easily be combined with feature-weighted linear stacking: <code>-q fs -q ss</code>, possibly improving on both.</p>
+<blockquote><p>So now you have a case where many base models should be created. You don’t know apriori which of these models are going to be helpful in the final meta model. In the case of two stage models, it is highly likely weak base models are preferred.</p>
+<p>So why tune these base models very much at all? Perhaps tuning here is just obtaining model diversity. But at the end of the day you don’t know which base models will be helpful. And the final stage will likely be linear (which requires no tuning, or perhaps a single parameter to give some sparsity). &nbsp;<cite><a href="https://www.kaggle.com/mikeskim">Mike Kim</a> <a href="https://www.kaggle.com/forums/f/15/kaggle-forum/t/14469/tuning-doesn-t-matter-why-are-you-doing-it/">Tuning doesn’t matter. Why are you doing it?</a></cite></p></blockquote>
+<h3>Stacking classifiers with regressors and vice versa</h3>
+<p>Stacking allows you to use classifiers for regression problems and vice versa. For instance, one may try a base model with quantile regression on a binary classification problem. A good stacker should be able to take information from the predictions, even though usually regression is not the best classifier.</p>
+<p>Using classifiers for regression problems is a bit trickier. You use binning first: You turn the y-label into evenly spaced classes. A regression problem that requires you to predict wages can be turned into a multiclass classification problem like so:</p>
+<ul>
+<li>Everything under 20k is class 1.</li>
+<li>Everything between 20k and 40k is class 2.</li>
+<li>Everything over 40k is class 3.</li>
+</ul>
+<p>The predicted probabilities for these classes can help a stacking regressor make better predictions.</p>
+<blockquote><p>“I learned that you never, ever, EVER go anywhere without your out-of-fold predictions. If I go to Hawaii or to the bathroom I am bringing them with. Never know when I need to train a 2nd or 3rd level meta-classifier” <cite><a href="https://www.kaggle.com/scharf">T. Sharf</a></cite></p></blockquote>
+<h3>Stacking unsupervised learned features</h3>
+<p>There is no reason we are restricted to using supervised learning techniques with stacking. You can also stack with unsupervised learning techniques.</p>
+<p>K-Means clustering is a popular technique that makes sense here. Sofia-ML implements a fast online k-means algorithm suitable for this.</p>
+<p>Another more recent interesting addition is to use <a href="http://lvdmaaten.github.io/tsne/">t-SNE</a>: Reduce the dataset to 2 or 3 dimensions and stack this with a non-linear stacker. Using a holdout set for stacking/blending feels like the safest choice here. See here for a solution by <a href="https://www.kaggle.com/mikeskim">Mike Kim</a>, using t-SNE vectors and boosting them with XGBoost: ‘<a href="https://www.kaggle.com/c/otto-group-product-classification-challenge/forums/t/14295/41599-via-tsne-meta-bagging">0.41599 via t-SNE meta-bagging</a>‘.</p>
+<p><a href="./Kaggle Ensembling Guide _ MLWave_files/t-sne.png"><img class="aligncenter size-full wp-image-1006" src="./Kaggle Ensembling Guide _ MLWave_files/t-sne.png" alt="t-SNE" width="550" height="516"></a></p>
+<p><small><a href="https://www.kaggle.com/piotrw">Piotr</a> shows a nice visualization with t-SNE on the Otto Product Classification Challenge data set.</small></p>
+<h3>Online Stacking</h3>
+<p>I spend quit a lot of time working out an idea I had for online stacking: first create small fully random trees from the hashed binary representation. Substract profit or add profit when the tree makes a correct prediction. Now take the most profitable and least profitable trees and add them to the feature representation.</p>
+<p>It worked, but only on artificial data. For instance, a linear perceptron with online random tree stacking was able to learn a non-linear XOR-problem. It did not work on any real-life data I tried it on, and believe me, I tried. So from now on I’ll be suspicious of papers which only feature artificial data sets to showcase their new algorithm.</p>
+<p>A similar idea did work for the author of the paper: <a href="http://arxiv.org/abs/1501.02990">random bit regression.</a> Here many random linear functions are created from the features, and the best are found through heavy regularization. This I was able to replicate with success on some datasets. This will the topic of a future post.</p>
+<p>A more concrete example of (semi-) online stacking is with ad click prediction. Models trained on recent data perform better there. So when a dataset has a temporal effect, you could use Vowpal Wabbit to train on the entire dataset, and use a more complex and powerful tool like XGBoost to train on the last day of data. Then you stack the XGBoost predictions together with the samples and let Vowpal Wabbit do what it does best: optimizing loss functions.</p>
+<blockquote><p>The natural world is complex, so it figures that ensembling different models can capture more of this complexity. <cite>Ben Hamner ‘Machine learning best practices we’ve learned from hundreds of competitions’ (<a href="https://www.youtube.com/watch?v=9Zag7uhjdYo">video</a>)</cite></p></blockquote>
+<h3>Everything is a hyper-parameter</h3>
+<p>When doing stacking/blending/meta-modeling it is healthy to think of every action as a hyper-parameter for the stacker model.</p>
+<p>So for instance:</p>
+<ul>
+<li>Not scaling the data</li>
+<li>Standard-Scaling the data</li>
+<li>Minmax scaling the data</li>
+</ul>
+<p>are simply extra parameters to be tuned to improve the ensemble performance. Likewise, the number of base models to use can be seen as a parameter to optimize. Feature selection (top 70%) or imputation (impute missing features with a 0) are other examples of meta-parameters.</p>
+<p>Like a random gridsearch is a good candidate for tuning algorithm parameters, so does it work for tuning these meta-parameters.</p>
+<blockquote><p>Sometimes it is useful to allow XGBoost to see what a KNN-classifier sees. – <cite><a href="http://blog.kaggle.com/2015/05/07/profiling-top-kagglers-kazanovacurrently-2-in-the-world/">Marios Michailidis</a></cite></p></blockquote>
+<h3>Model Selection</h3>
+<p>You can further optimize scores by combining multiple ensembled models.</p>
+<ul>
+<li>There is the ad-hoc approach: Use averaging, voting or rank averaging on manually-selected well-performing ensembles.</li>
+<li>Greedy forward model selection (<a href="http://www.cs.cornell.edu/~caruana/ctp/ct.papers/caruana.icml04.icdm06long.pdf">Caruana et al.</a>). Start with a base ensemble of 3 or so good models. Add a model when it increases the train set score the most. By allowing put-back of models, a single model may be picked multiple times (weighing).</li>
+<li>Genetic model selection uses genetic algorithms and CV-scores as the fitness function. See for instance <a href="https://www.kaggle.com/inversion">inversion</a>‘s solution ‘<a href="https://www.kaggle.com/c/otto-group-product-classification-challenge/forums/t/14315/strategy-for-top-25-score">Strategy for top 25 position</a>‘.</li>
+<li>I use a fully random method inspired by Caruana’s method: Create a 100 or so ensembles from randomly selected ensembles (without placeback). Then pick the highest scoring model.</li>
+</ul>
+<h3>Automation</h3>
+<p><img class="alignleft size-thumbnail wp-image-1026" src="./Kaggle Ensembling Guide _ MLWave_files/thumb76_76-150x150.png" alt="Otto Group" width="150" height="150">When stacking for the <a href="https://www.kaggle.com/c/otto-group-product-classification-challenge">Otto product classification</a> competition I quickly got a good top 10 spot. Adding more and more base models and bagging multiple stacked ensembles I was able to keep improving my score.</p>
+<p>Once I had reached 7 base models stacked by 6 stackers, a sense of panic and gloom started to set in. Would I be able to replicate all of this? These complex and slow unwieldy models were out of my comfort zone of fast and simple Machine Learning.</p>
+<p>I spend the rest of the competition building a way to automate stacking. For base models pure random algorithms with pure random parameters are trained. Wrappers were written to make classifiers like VW, Sofia-ML, RGF, MLP and XGBoost play nicely with the Scikit-learn API.</p>
+<p><img class="aligncenter size-full wp-image-1028" src="./Kaggle Ensembling Guide _ MLWave_files/whiteboard-automated-stacking.png" alt="Whiteboard automated stacking" width="550" height="279"><br>
+<small><i>The first whiteboard sketch for a parallelized automated stacker with 3 buckets</i></small></p>
+<p>For stackers I let the script use SVM, random forests, extremely randomized&nbsp;trees, GBM and XGBoost with random parameters and a random subset of base models.</p>
+<p>Finally the created stackers are averaged when&nbsp;their fold-predictions on the train set produced a lower loss.</p>
+<p>This automated stacker was able to rank 57th spot a week before the competition ended. It contributed to my final ensemble. The only difference was I never spend time tuning or selecting: I started the script, went to bed, and awoke to a good solution.</p>
+<p><a href="./Kaggle Ensembling Guide _ MLWave_files/otto.png"><img class="aligncenter size-full wp-image-973" src="./Kaggle Ensembling Guide _ MLWave_files/otto.png" alt="Otto Leaderboard" width="600" height="102"></a></p>
+<p><small><i>The automated stacker is able to get a top 10% score without any tuning or manual model selection on a competitive task with over 3000 competitors.</i></small></p>
+<p>Automatic stacking is one of my new big interests. Expect a few follow-up articles on this. The best result of automatic stacking was found on the TUT Headpose Estimation challenge. This black-box solution beats the current state-of-the-art set&nbsp;by domain experts who created special-purpose algorithms for this particular problem.</p>
+<p><a href="./Kaggle Ensembling Guide _ MLWave_files/tut-headpose.png"><img class="aligncenter size-full wp-image-970" src="./Kaggle Ensembling Guide _ MLWave_files/tut-headpose.png" alt="Tut headpose leaderboard" width="600" height="260"></a></p>
+<p>Noteworthy: This was a multi-label classification problem. Predictions for both “yaw” and “pitch” were required. Since the “yaw” and “pitch”-labels of a head pose are interrelated, stacking a model with predictions for “yaw” increased the accuracy for “pitch” predictions and vice versa. An interesting result.</p>
+<p>Models visualized as a network can be trained used back-propagation: then stacker models learn which base models reduce the error the most.</p>
+<p><img class="aligncenter size-full wp-image-989" src="./Kaggle Ensembling Guide _ MLWave_files/otto-backprop.png" alt="Ensemble Network" width="550" height="361"></p>
+<p>Next to CV-scores one could take the standard deviation of the CV-scores into account (a smaller deviation is a safer choice). One could look at optimizing complexity/memory usage and running times. Finally one can look at adding correlation into the mix — make the script prefer uncorrelated model predictions when creating ensembles.</p>
+<p>The entire automated stacking pipeline can be parallelized and distributed. This also brings speed improvements and faster good results on a single laptop.</p>
+<p>Contextual bandit optimization seems like a good alternative to fully random gridsearch: We want our algorithm to start exploiting good parameters and models and remember that the random SVM it picked last time ran out of memory. These additions to stacking will be explored in greater detail soon.</p>
+<p>In the meantime you can get a sneak preview on the MLWave Github repo: “<a href="https://github.com/MLWave/hodor-autoML">Hodor-autoML</a>“.</p>
+<p>The #1 and #2 winners of the Otto product classification challenge used ensembles of over a 1000 different models. Read more about the <a href="https://www.kaggle.com/c/otto-group-product-classification-challenge/forums/t/14335/1st-place-winner-solution-gilberto-titericz-stanislav-semenov">first place</a> and the <a href="http://blog.kaggle.com/2015/06/09/otto-product-classification-winners-interview-2nd-place-alexander-guschin/">second place</a>.</p>
+<h2>Why create these Frankenstein ensembles?</h2>
+<p>You may wonder why this exercise in futility: stacking and combining 1000s of models and computational hours is insanity right? Well… yes. But these monster ensembles still have their uses:</p>
+<ul>
+<li>You can win Kaggle competitions.</li>
+<li>You can beat most state-of-the-art academic benchmarks with a single approach.</li>
+<li>You can then compare your new-and-improved benchmark with the performance of a simpler, more production-friendly model</li>
+<li>One day, today’s computers and clouds will seem weak. You’ll be ready.</li>
+<li>It is possible to transfer knowledge from the ensemble back to a simpler shallow model (Hinton’s <a href="http://www.ttic.edu/dl/dark14.pdf">Dark Knowledge</a>, Caruana’s <a href="https://www.cs.cornell.edu/~caruana/compression.kdd06.pdf">Model Compression</a>)</li>
+<li>Not all base models necessarily need to finish in time. In that regard, ensembling introduces a form of graceful degradation: loss of one model is not fatal for creating good predictions.</li>
+<li>Automated large ensembles ward against overfit and add a form of regularization, without requiring much tuning or selection. In principle stacking&nbsp;could be used by lay-people.</li>
+<li>It is currently one of the best methods to improve machine learning algorithms, perhaps telling use something about efficient <a href="http://mlwave.com/human-ensemble-learning/">human ensemble learning</a>.</li>
+<li>A 1% increase in accuracy may push an investment fund from making a loss, into making a little less loss. More seriously: Improving healthcare screening methods helps save lives.</li>
+</ul>
+<p>Update: Thanks a lot to&nbsp;<a href="https://github.com/lenguyenthedat">Dat Le</a> for documenting and refactoring the <a href="https://github.com/MLWave/Kaggle-Ensemble-Guide">code</a> accompanying this article. Thanks a lot everyone for the encouraging comments. My apologies if I have forgotten to link to your previous inspirational work. Further reading at “<a href="http://www.overkillanalytics.net/more-is-always-better-the-power-of-simple-ensembles/">More is always better – The power of Simple Ensembles</a>” by <a href="https://www.kaggle.com/cartersibley">Carter Sibley</a>, “<a href="https://www.kaggle.com/c/tradeshift-text-classification/forums/t/10629/benchmark-with-sklearn/">Tradeshift Benchmark Tutorial with two-stage SKLearn models</a>” by&nbsp;<a href="https://www.kaggle.com/dremovd">Dmitry Dryomov</a>, “<a href="http://www.chioka.in/stacking-blending-and-stacked-generalization/">Stacking, Blending and Stacked Generalization</a>” by <a href="https://www.kaggle.com/ericchio">Eric Chio</a>, and “<a href="http://videolectures.net/roks2013_wiering_vector/">Deep Support Vector Machines</a>” by <a href="http://www.ai.rug.nl/~mwiering/">Marco Wiering</a>.</p>
+<p><small>Terminology: When I say ensembling I mean ‘model averaging’: combining multiple models. Algorithms like Random Forests use ensembling techniques like bagging internally. For this article we are not interested in that.</small></p>
+<p><small>The intro image came from WikiMedia Commons and is in the public domain, courtesy of <a href="https://en.wikipedia.org/wiki/User:Merzperson">Jesse Merz</a>.</small></p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+	<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<a href="http://mlwave.com/online-learning-perceptron/" rel="prev"><span class="meta-nav">Previous Post</span>Online Learning Perceptron</a>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+<div id="comments" class="comments-area">
+
+	
+	<h2 class="comments-title">
+		18 thoughts on “Kaggle Ensembling Guide”	</h2>
+
+	
+	<ol class="comment-list">
+				<li id="comment-215463" class="comment even thread-even depth-1">
+			<article id="div-comment-215463" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/40780f2c35b4325d5ff893237438ee30" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">OLAV</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-215463">
+							<time datetime="2015-06-13T07:20:43+00:00">
+								June 13, 2015 at 07:20							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Fantastic post! Thank you! As far as I know, not available in literature in this breath and depth.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=215463#respond" onclick="return addComment.moveForm(&quot;div-comment-215463&quot;, &quot;215463&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-215565" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-215565" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/6b746c1dddad40d31f7318f6154c548b" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn"><a href="https://www.kaggle.com/kazanova" rel="external nofollow" class="url">KazAnova</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-215565">
+							<time datetime="2015-06-13T17:16:46+00:00">
+								June 13, 2015 at 17:16							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>You gave away too much! Now we will have to ‘actually’ get better if there is any hope in winning !</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=215565#respond" onclick="return addComment.moveForm(&quot;div-comment-215565&quot;, &quot;215565&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-215958" class="comment even thread-even depth-1">
+			<article id="div-comment-215958" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/394ae86b51cf106e6a4797409170b13e" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Harry Dinh</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-215958">
+							<time datetime="2015-06-15T01:46:10+00:00">
+								June 15, 2015 at 01:46							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great post! I have been looking for this technique.<br>
+Many thanks !</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=215958#respond" onclick="return addComment.moveForm(&quot;div-comment-215958&quot;, &quot;215958&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-216045" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://advanceddataanalytics.net/2015/06/15/distilled-news-121/" rel="external nofollow" class="url">Distilled News | Data Analytics &amp; R</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-216066" class="comment even thread-even depth-1">
+			<article id="div-comment-216066" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/2ac2a00f5911cc8234778be41c835e13" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn"><a href="http://adilmoujahid.com/" rel="external nofollow" class="url">Adil</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-216066">
+							<time datetime="2015-06-15T12:43:40+00:00">
+								June 15, 2015 at 12:43							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks a lot of this post. Very helpful!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=216066#respond" onclick="return addComment.moveForm(&quot;div-comment-216066&quot;, &quot;216066&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-216138" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-216138" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/3fbeba968964cee7d0329c95e448f846" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Timothy Scharf</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-216138">
+							<time datetime="2015-06-15T17:48:30+00:00">
+								June 15, 2015 at 17:48							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>really good Triskelion!! </p>
+<p>Its funny you are trying to automate this because I am too. Otto really was my first accidental delve into serious stacking.   It went a little something  like..   </p>
+<p>These KNN’s are great for this .<br>
+ They are of use. I need k=1,2,4,8,16,…1024.  The K=1 nails classes 3 and 4 and k=1024 owns class 2!!<br>
+ And the 3-D T-sne version , and the log10, gotta get those in there.  </p>
+<p>Plus  I ran a few deep-nets for giggles… gotta have those in there..</p>
+<p>Holy shit, wait  I need quality out of fold predictions for all that if I want to use XGboost to blend the level 2???   Thats a mess.</p>
+<p>Fast forward I had built the Frankenstein you mentioned – but it truly was a disorganized mess, though it  mercifully limped it to a respectable finish.  </p>
+<p>Working with a flexible framework would’ve been great.</p>
+<p>Anyway I could ramble for hours… one last thought</p>
+<p>The Hinton paper on dark knowledge you cited really hit home for me when I read it during Otto.  Xgboost was splitting on predictions from class 2  from KNN models when it was building trees for classes 3 and 4 in the level 2 classifier.  It was doing it.. using teh dark knowledge.   Once I saw that I was like.. man there is no going back to the old way of doing business..</p>
+<p>This is the future..</p>
+<p>It was confirmed when I saw the winners Frankenstein</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=216138#respond" onclick="return addComment.moveForm(&quot;div-comment-216138&quot;, &quot;216138&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-216153" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://www.erogol.com/large-set-machine-learning-resources-beginners-mavens/" rel="external nofollow" class="url">Wise set of machine learning resources abou</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-216375" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-216375" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/f670a39162e379fc6bd53312e0e29244" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Julian de Wit</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-216375">
+							<time datetime="2015-06-16T08:05:42+00:00">
+								June 16, 2015 at 08:05							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Cloud people say “Dont treat your servers as pets but treat them as Cattle” </p>
+<p>I think the same saying should go for Machine Learning.</p>
+<p>“Dont treat your MODELS as pets but treat them as Cattle”</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=216375#respond" onclick="return addComment.moveForm(&quot;div-comment-216375&quot;, &quot;216375&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-216506" class="comment even thread-even depth-1">
+			<article id="div-comment-216506" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/9f43a5a979f644c50a33b0d25af02222" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Vladimir Chupakhin</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-216506">
+							<time datetime="2015-06-16T19:59:27+00:00">
+								June 16, 2015 at 19:59							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>mind blowing!!! thank for such a nice summary!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=216506#respond" onclick="return addComment.moveForm(&quot;div-comment-216506&quot;, &quot;216506&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-216602" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="https://exversiondata.wordpress.com/2015/06/14/guide-to-data-science-competitions/" rel="external nofollow" class="url">Guide to Data Science Competitions | Happy Endpoints</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-216603" class="comment even thread-even depth-1">
+			<article id="div-comment-216603" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/b7e6aa67a2a80542f9dca8d0816b2049" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Devin</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-216603">
+							<time datetime="2015-06-17T03:52:07+00:00">
+								June 17, 2015 at 03:52							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks! I have been wanting to learn more about ensembling, and this is just what I was looking for.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=216603#respond" onclick="return addComment.moveForm(&quot;div-comment-216603&quot;, &quot;216603&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-216865" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-216865" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/a6c997b2ed967fb33728723697215f1c" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Mikhail Trofimov</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-216865">
+							<time datetime="2015-06-18T08:11:26+00:00">
+								June 18, 2015 at 08:11							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks! Very nice post!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=216865#respond" onclick="return addComment.moveForm(&quot;div-comment-216865&quot;, &quot;216865&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-216947" class="comment even thread-even depth-1">
+			<article id="div-comment-216947" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/5937366806a289cd3d782eeef1e670ef" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Jeremy Castle</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-216947">
+							<time datetime="2015-06-18T18:43:36+00:00">
+								June 18, 2015 at 18:43							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you for a great post on stacking and ensembling techniques.  I have been making progress in ML competitions and I expect studying and applying your ideas will absolutely aid in future projects.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=216947#respond" onclick="return addComment.moveForm(&quot;div-comment-216947&quot;, &quot;216947&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-217511" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-217511" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/d751a80b50a42814ecd97a858c0c2778" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Andres</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-217511">
+							<time datetime="2015-06-21T17:29:00+00:00">
+								June 21, 2015 at 17:29							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you very much for this post. It was a fantastic reading!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=217511#respond" onclick="return addComment.moveForm(&quot;div-comment-217511&quot;, &quot;217511&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-219692" class="comment even thread-even depth-1">
+			<article id="div-comment-219692" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/b488d43edcf19a3375d65c6d6545531b" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn"><a href="http://jamesdipadua.com/" rel="external nofollow" class="url">james dipadua</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-219692">
+							<time datetime="2015-06-30T23:22:57+00:00">
+								June 30, 2015 at 23:22							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>i’m really new to ML and trying to learn as much as i can about the field, particularly best practices. i just wanted to let you know this was an extremely well-written tutorial, and i really appreciate you taking the time to share. thank you.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=219692#respond" onclick="return addComment.moveForm(&quot;div-comment-219692&quot;, &quot;219692&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-223234" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-223234" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/09843d302b328abe750ece9c5d23ac19" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Paul</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-223234">
+							<time datetime="2015-07-24T12:03:16+00:00">
+								July 24, 2015 at 12:03							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>A well-written guide that’s easy to understand and detailed yet concise. I found it extremely helpful. Thanks for sharing!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=223234#respond" onclick="return addComment.moveForm(&quot;div-comment-223234&quot;, &quot;223234&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-223431" class="comment even thread-even depth-1">
+			<article id="div-comment-223431" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/95bbde757b58d737e2fdde317334c0d4" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Apurva</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-223431">
+							<time datetime="2015-07-25T12:07:29+00:00">
+								July 25, 2015 at 12:07							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks for this post! Very informative!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=223431#respond" onclick="return addComment.moveForm(&quot;div-comment-223431&quot;, &quot;223431&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-224045" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-224045" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Kaggle Ensembling Guide _ MLWave_files/7f974d39793da4afe4fdc981c4e8161e" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">balikasg</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://mlwave.com/kaggle-ensembling-guide/#comment-224045">
+							<time datetime="2015-07-28T10:07:00+00:00">
+								July 28, 2015 at 10:07							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you very much for sharing this. It is very helpful.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/?replytocom=224045#respond" onclick="return addComment.moveForm(&quot;div-comment-224045&quot;, &quot;224045&quot;, &quot;respond&quot;, &quot;877&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+	</ol><!-- .comment-list -->
+
+	
+	
+	
+									<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://mlwave.com/kaggle-ensembling-guide/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://mlwave.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="877" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="05480073eb"></p><p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1438614093954"></form>
+							</div><!-- #respond -->
+			
+</div><!-- #comments -->
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+<div id="secondary">
+		<h2 class="site-description">Learning Machine Learning</h2>
+	
+	
+		<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://mlwave.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="./Kaggle Ensembling Guide _ MLWave_files/Kaggle Ensembling Guide _ MLWave.html">Kaggle Ensembling Guide</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/online-learning-perceptron/">Online Learning Perceptron</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/lessons-from-avito-prohibited-content-kaggle/">Lessons learned from the Hunt for Prohibited Content on Kaggle</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/ycombinator-2014-data-science-start-ups/">yCombinator 2014 Data Science Start-ups</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/detecting-counterfeit-webshops-part-1-feature-engineering/">Detecting Counterfeit Webshops. Part 1: Feature engineering</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/reflecting-back-on-one-year-of-kaggle-contests/">Reflecting back on one year of Kaggle contests</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/human-ensemble-learning/">Human Ensemble Learning</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/predicting-click-through-rates-with-online-machine-learning/">Predicting CTR with online machine learning</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/winning-2-kaggle-in-class-competitions-on-spam/">Winning 2 Kaggle in Class Competitions on Spam</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/how-to-produce-and-use-datasets-lessons-learned/">How to produce and use datasets: lessons learned</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/predict-visual-stimuli-from-human-brain-activity/">Predict visual stimuli from human brain activity</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/predicting-repeat-buyers-vowpal-wabbit/">Predicting repeat buyers using purchase history</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/install-vowpal-wabbit-on-windows-and-cygwin/">Install Vowpal Wabbit on Windows and Cygwin</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/k-nn-clustering-compressed-binary-files-ncd/">k-Nearest Neighbors and Clustering on Compressed Binary Files</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/a-clustered-google-maps-of-dutch-traffic-accidents/">A Clustered Google Maps of 10k Dutch Traffic Accidents</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments">balikasg on <a href="http://mlwave.com/kaggle-ensembling-guide/#comment-224045">Kaggle Ensembling Guide</a></li><li class="recentcomments">Tara on <a href="http://mlwave.com/movie-review-sentiment-analysis-with-vowpal-wabbit/#comment-223922">Movie Review Sentiment Analysis with Vowpal Wabbit</a></li><li class="recentcomments">Apurva on <a href="http://mlwave.com/kaggle-ensembling-guide/#comment-223431">Kaggle Ensembling Guide</a></li><li class="recentcomments">Paul on <a href="http://mlwave.com/kaggle-ensembling-guide/#comment-223234">Kaggle Ensembling Guide</a></li><li class="recentcomments"><a href="https://abirchakraborty.wordpress.com/2015/07/13/model-building-in-vowpal-wabbit/" rel="external nofollow" class="url">Model Building in Vowpal Wabbit | abirchakraborty</a> on <a href="http://mlwave.com/tutorial-online-lda-with-vowpal-wabbit/#comment-221602">Tutorial: Online LDA with Vowpal Wabbit</a></li><li class="recentcomments">Hesam on <a href="http://mlwave.com/kaggle-connectomics-python-benchmark-code/#comment-221071">Kaggle Connectomics: Python Benchmark Code</a></li><li class="recentcomments">isotope on <a href="http://mlwave.com/online-learning-perceptron/#comment-220709">Online Learning Perceptron</a></li><li class="recentcomments">Triskelion on <a href="http://mlwave.com/online-learning-perceptron/#comment-220666">Online Learning Perceptron</a></li></ul></aside><aside id="text-3" class="widget widget_text"><h1 class="widget-title">Other ML sites</h1>			<div class="textwidget"><ul>
+<li><a href="http://fastml.com/">FastML (Foxtrot)</a></li>
+<li><a href="http://beatingthebenchmark.blogspot.com/">Beating the Benchmark (Abhishek)</a></li>
+<li><a href="http://trevorstephens.com/">Trevor Stephens (Kaggler)</a></li>
+<li><a href="http://blog.kaggle.com/">Kaggle Blog</a></li>
+</ul></div>
+		</aside>	</div><!-- #primary-sidebar -->
+	</div><!-- #secondary -->
+
+		</div><!-- #main -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			
+<div id="supplementary">
+	<div id="footer-sidebar" class="footer-sidebar widget-area masonry" role="complementary" style="position: relative; height: 252px;">
+		<aside id="pages-2" class="widget widget_pages masonry-brick" style="position: absolute; left: 0px; top: 48px;"><h1 class="widget-title">Pages</h1>		<ul>
+			<li class="page_item page-item-13"><a href="http://mlwave.com/about/">About</a></li>
+<li class="page_item page-item-22"><a href="http://mlwave.com/contact/">Contact</a></li>
+		</ul>
+		</aside>		<aside id="recent-posts-3" class="widget widget_recent_entries masonry-brick" style="position: absolute; left: 315px; top: 48px;">		<h1 class="widget-title">Recent Articles</h1>		<ul>
+					<li>
+				<a href="./Kaggle Ensembling Guide _ MLWave_files/Kaggle Ensembling Guide _ MLWave.html">Kaggle Ensembling Guide</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/online-learning-perceptron/">Online Learning Perceptron</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/lessons-from-avito-prohibited-content-kaggle/">Lessons learned from the Hunt for Prohibited Content on Kaggle</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/ycombinator-2014-data-science-start-ups/">yCombinator 2014 Data Science Start-ups</a>
+						</li>
+					<li>
+				<a href="http://mlwave.com/detecting-counterfeit-webshops-part-1-feature-engineering/">Detecting Counterfeit Webshops. Part 1: Feature engineering</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-3" class="widget widget_recent_comments masonry-brick" style="position: absolute; left: 630px; top: 48px;"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments">balikasg on <a href="http://mlwave.com/kaggle-ensembling-guide/#comment-224045">Kaggle Ensembling Guide</a></li><li class="recentcomments">Tara on <a href="http://mlwave.com/movie-review-sentiment-analysis-with-vowpal-wabbit/#comment-223922">Movie Review Sentiment Analysis with Vowpal Wabbit</a></li><li class="recentcomments">Apurva on <a href="http://mlwave.com/kaggle-ensembling-guide/#comment-223431">Kaggle Ensembling Guide</a></li><li class="recentcomments">Paul on <a href="http://mlwave.com/kaggle-ensembling-guide/#comment-223234">Kaggle Ensembling Guide</a></li><li class="recentcomments"><a href="https://abirchakraborty.wordpress.com/2015/07/13/model-building-in-vowpal-wabbit/" rel="external nofollow" class="url">Model Building in Vowpal Wabbit | abirchakraborty</a> on <a href="http://mlwave.com/tutorial-online-lda-with-vowpal-wabbit/#comment-221602">Tutorial: Online LDA with Vowpal Wabbit</a></li></ul></aside><aside id="text-2" class="widget widget_text masonry-brick" style="position: absolute; left: 945px; top: 48px;"><h1 class="widget-title">Around the web</h1>			<div class="textwidget"><ul>
+<li><a href="https://twitter.com/mlwave">MLWave Twitter</a></li>
+<li><a href="https://github.com/MLWave/">MLWave Github</a></li>
+</ul></div>
+		</aside>	</div><!-- #footer-sidebar -->
+</div><!-- #supplementary -->
+
+			<div class="site-info">
+				<!--				<a href="http://wordpress.org/">Proudly powered by WordPress</a>-->
+				ML Wave website content is licensed under Creative Commons 3.0 attribution
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+	<script type="text/javascript" src="./Kaggle Ensembling Guide _ MLWave_files/M9RPzM4szk0t0Y_PzEvWT8svytUx1E_OzytJTC7RBXF1zfWBMjmlKanF-llAVFiaWlSpB5LRy83MAwA.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/mlwave.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Kaggle Ensembling Guide _ MLWave_files/TYxBCoUwDAUv9PujKHgeiSlUTKJJinh7K25czvDm9YAqMWOkrMZpgiK41YUcVgdHK3v4b2wjZpJIRvt2_blIczy7ir00wHpUeuAjO4izRVfWakEkz2WuglFU_AY.js"></script>
+<script src="./Kaggle Ensembling Guide _ MLWave_files/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100713548); }catch(e){}</script>
+<noscript>&lt;p&gt;&lt;img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100713548ns.gif" /&gt;&lt;/p&gt;</noscript>
+
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using disk
+Page Caching using disk: enhanced
+
+ Served from: mlwave.com @ 2015-08-03 14:24:12 by W3 Total Cache --></body></html>

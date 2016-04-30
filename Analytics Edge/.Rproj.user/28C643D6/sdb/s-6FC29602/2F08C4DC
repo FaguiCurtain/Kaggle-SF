@@ -1,0 +1,17 @@
+{
+    "contents" : "# VIDEO 1\n\n# Read in the data\nNBA = read.csv(\"NBA_train.csv\")\nstr(NBA)\n\n\n# VIDEO 2\n\n# How many wins to make the playoffs?\ntable(NBA$W, NBA$Playoffs)\n\n# Compute Points Difference\nNBA$PTSdiff = NBA$PTS - NBA$oppPTS\n\n# Check for linear relationship\nplot(NBA$PTSdiff, NBA$W)\n\n# Linear regression model for wins\nWinsReg = lm(W ~ PTSdiff, data=NBA)\nsummary(WinsReg)\n\n\n# VIDEO 3\n\n# Linear regression model for points scored\nPointsReg = lm(PTS ~ X2PA + X3PA + FTA + AST + ORB + DRB + TOV + STL + BLK, data=NBA)\nsummary(PointsReg)\n\n# Sum of Squared Errors\nPointsReg$residuals\nSSE = sum(PointsReg$residuals^2)\nSSE\n\n# Root mean squared error\nRMSE = sqrt(SSE/nrow(NBA))\nRMSE\n\n# Average number of points in a season\nmean(NBA$PTS)\n\n# Remove insignifcant variables\nsummary(PointsReg)\n\nPointsReg2 = lm(PTS ~ X2PA + X3PA + FTA + AST + ORB + DRB + STL + BLK, data=NBA)\nsummary(PointsReg2)\n\nPointsReg3 = lm(PTS ~ X2PA + X3PA + FTA + AST + ORB + STL + BLK, data=NBA)\nsummary(PointsReg3)\n\nPointsReg4 = lm(PTS ~ X2PA + X3PA + FTA + AST + ORB + STL, data=NBA)\nsummary(PointsReg4)\n\n# Compute SSE and RMSE for new model\nSSE_4 = sum(PointsReg4$residuals^2)\nRMSE_4 = sqrt(SSE_4/nrow(NBA))\nSSE_4\nRMSE_4\n\n\n\n\n# VIDEO 4\n\n# Read in test set\nNBA_test = read.csv(\"NBA_test.csv\")\n\n# Make predictions on test set\nPointsPredictions = predict(PointsReg4, newdata=NBA_test)\n\n# Compute out-of-sample R^2\nSSE = sum((PointsPredictions - NBA_test$PTS)^2)\nSST = sum((mean(NBA$PTS) - NBA_test$PTS)^2)\nR2 = 1 - SSE/SST\nR2\n\n# Compute the RMSE\nRMSE = sqrt(SSE/nrow(NBA_test))\nRMSE",
+    "created" : 1439892204522.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2990617391",
+    "id" : "2F08C4DC",
+    "lastKnownWriteTime" : 1439892190,
+    "path" : "~/coursera/Analytics Edge/Unit2_Recitation.R",
+    "project_path" : "Unit2_Recitation.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

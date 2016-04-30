@@ -1,0 +1,17 @@
+{
+    "contents" : "# Unit 6 - Recitation\n\n# Video 2\n\nflower = read.csv(\"flower.csv\", header=FALSE)\nstr(flower)\n\n# Change the data type to matrix\nflowerMatrix = as.matrix(flower)\nstr(flowerMatrix)\n\n# Turn matrix into a vector\nflowerVector = as.vector(flowerMatrix)\nstr(flowerVector)\n\nflowerVector2 = as.vector(flower)\nstr(flowerVector2)\n\n# Compute distances\ndistance = dist(flowerVector, method = \"euclidean\")\n\n\n\n# Video 3\n\n# Hierarchical clustering\nclusterIntensity = hclust(distance, method=\"ward.D\")\n\n# Plot the dendrogram\nplot(clusterIntensity)\n\n# Select 3 clusters\nrect.hclust(clusterIntensity, k = 3, border = \"red\")\nflowerClusters = cutree(clusterIntensity, k = 3)\nflowerClusters\n\n# Find mean intensity values\ntapply(flowerVector, flowerClusters, mean)\n\n# Plot the image and the clusters\ndim(flowerClusters) = c(50,50)\nimage(flowerClusters, axes = FALSE)\n\n# Original image\nimage(flowerMatrix,axes=FALSE,col=grey(seq(0,1,length=256)))\n\n\n\n# Video 4\n\n# Let's try this with an MRI image of the brain\n\nhealthy = read.csv(\"healthy.csv\", header=FALSE)\nhealthyMatrix = as.matrix(healthy)\nstr(healthyMatrix)\n\n# Plot image\nimage(healthyMatrix,axes=FALSE,col=grey(seq(0,1,length=256)))\n\n# Hierarchial clustering\nhealthyVector = as.vector(healthyMatrix)\ndistance = dist(healthyVector, method = \"euclidean\")\n\n# We have an error - why?\nstr(healthyVector)\n\n\n\n# Video 5\n\n# Specify number of clusters\nk = 5\n\n# Run k-means\nset.seed(1)\nKMC = kmeans(healthyVector, centers = k, iter.max = 1000)\nstr(KMC)\n\n# Extract clusters\nhealthyClusters = KMC$cluster\nKMC$centers[2]\n\n# Plot the image with the clusters\ndim(healthyClusters) = c(nrow(healthyMatrix), ncol(healthyMatrix))\n\nimage(healthyClusters, axes = FALSE, col=rainbow(k))\n\n\n\n# Video 6\n\n# Apply to a test image\n \ntumor = read.csv(\"tumor.csv\", header=FALSE)\ntumorMatrix = as.matrix(tumor)\ntumorVector = as.vector(tumorMatrix)\n\n# Apply clusters from before to new image, using the flexclust package\ninstall.packages(\"flexclust\")\nlibrary(flexclust)\n\nKMC.kcca = as.kcca(KMC, healthyVector)\ntumorClusters = predict(KMC.kcca, newdata = tumorVector)\n\n# Visualize the clusters\ndim(tumorClusters) = c(nrow(tumorMatrix), ncol(tumorMatrix))\n\nimage(tumorClusters, axes = FALSE, col=rainbow(k))\n\n",
+    "created" : 1439912189081.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "314698607",
+    "id" : "F4E53C9F",
+    "lastKnownWriteTime" : 1436369261,
+    "path" : "~/coursera/Analytics Edge/Unit6_Recitation.R",
+    "project_path" : "Unit6_Recitation.R",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

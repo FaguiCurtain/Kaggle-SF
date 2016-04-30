@@ -1,0 +1,17 @@
+{
+    "contents" : "# Unit 6 - Introduction to Clustering\n\n# Video 6\n\n# After following the steps in the video, load the data into R\nmovies = read.table(\"movieLens.txt\", header=FALSE, sep=\"|\",quote=\"\\\"\")\n\nstr(movies)\n\n# Add column names\ncolnames(movies) = c(\"ID\", \"Title\", \"ReleaseDate\", \"VideoReleaseDate\", \"IMDB\", \"Unknown\", \"Action\", \"Adventure\", \"Animation\", \"Childrens\", \"Comedy\", \"Crime\", \"Documentary\", \"Drama\", \"Fantasy\", \"FilmNoir\", \"Horror\", \"Musical\", \"Mystery\", \"Romance\", \"SciFi\", \"Thriller\", \"War\", \"Western\")\n\nstr(movies)\n\n# Remove unnecessary variables\nmovies$ID = NULL\nmovies$ReleaseDate = NULL\nmovies$VideoReleaseDate = NULL\nmovies$IMDB = NULL\n\n# Remove duplicates\nmovies = unique(movies)\n\n# Take a look at our data again:\nstr(movies)\n\n\n\n# Video 7\n\n# Compute distances\ndistances = dist(movies[2:20], method = \"euclidean\")\n\n# Hierarchical clustering\nclusterMovies = hclust(distances, method = \"ward.D\") \n\n# Plot the dendrogram\nplot(clusterMovies)\n\n# Assign points to clusters\nclusterGroups = cutree(clusterMovies, k = 10)\n\n#Now let's figure out what the clusters are like.\n\n# Let's use the tapply function to compute the percentage of movies in each genre and cluster\n\ntapply(movies$Action, clusterGroups, mean)\ntapply(movies$Romance, clusterGroups, mean)\n\n# We can repeat this for each genre. If you do, you get the results in ClusterMeans.ods\n\n\n# Find which cluster Men in Black is in.\n\nsubset(movies, Title==\"Men in Black (1997)\")\nclusterGroups[257]\n\n# Create a new data set with just the movies from cluster 2\ncluster2 = subset(movies, clusterGroups==2)\n\n# Look at the first 10 titles in this cluster:\ncluster2$Title[1:10]\n\n",
+    "created" : 1439912926823.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1570559705",
+    "id" : "16383E45",
+    "lastKnownWriteTime" : 1437215273,
+    "path" : "~/coursera/Analytics Edge/Unit6_Netflix.R",
+    "project_path" : "Unit6_Netflix.R",
+    "properties" : {
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

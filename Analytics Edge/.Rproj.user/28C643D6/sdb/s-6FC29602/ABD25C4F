@@ -1,0 +1,17 @@
+{
+    "contents" : "# Unit 3, The Framingham Heart Study\n\n# Video 3\n\n# Read in the dataset\nframingham = read.csv(\"framingham.csv\")\n\n# Look at structure\nstr(framingham)\n\n# Load the library caTools\nlibrary(caTools)\n\n# Randomly split the data into training and testing sets\nset.seed(1000)\n\n\n# Split up the data using subset\ntrain = subset(framingham, split==TRUE)\ntest = subset(framingham, split==FALSE)\n\n# Logistic Regression Model\nframinghamLog = glm(TenYearCHD ~ ., data = train, family=binomial)\nsummary(framinghamLog)\n\n# Predictions on the test set\npredictTest = predict(framinghamLog, type=\"response\", newdata=test)\n\n# Confusion matrix with threshold of 0.5\ntable(test$TenYearCHD, predictTest > 0.5)\n\n# Accuracy\n(1069+11)/(1069+6+187+11)\n\n# Baseline accuracy\n(1069+6)/(1069+6+187+11) \n\n# Test set AUC \nlibrary(ROCR)\nROCRpred = prediction(predictTest, test$TenYearCHD)\nas.numeric(performance(ROCRpred, \"auc\")@y.values)\n",
+    "created" : 1439891395033.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1845264062",
+    "id" : "ABD25C4F",
+    "lastKnownWriteTime" : 1434732843,
+    "path" : "~/coursera/Analytics Edge/Unit3_Framingham.R",
+    "project_path" : "Unit3_Framingham.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

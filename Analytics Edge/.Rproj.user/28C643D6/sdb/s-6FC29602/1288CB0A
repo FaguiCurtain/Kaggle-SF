@@ -1,0 +1,17 @@
+{
+    "contents" : "# Unit 3, Modeling the Expert\n\n\n# Video 4\n\n# Read in dataset\nquality = read.csv(\"quality.csv\")\n\n# Look at structure\nstr(quality)\n\n# Table outcome\ntable(quality$PoorCare)\n\n# Baseline accuracy\n98/131\n\n# Install and load caTools package\ninstall.packages(\"caTools\")\nlibrary(caTools)\n\n# Randomly split data\nset.seed(88)\nsplit = sample.split(quality$PoorCare, SplitRatio = 0.75)\nsplit\n\n# Create training and testing sets\nqualityTrain = subset(quality, split == TRUE)\nqualityTest = subset(quality, split == FALSE)\n\n# Logistic Regression Model\nQualityLog = glm(PoorCare ~ OfficeVisits + Narcotics, data=qualityTrain, family=binomial)\nsummary(QualityLog)\n\n# Make predictions on training set\npredictTrain = predict(QualityLog, type=\"response\")\n\n# Analyze predictions\nsummary(predictTrain)\ntapply(predictTrain, qualityTrain$PoorCare, mean)\n\n\n\n# Video 5\n\n# Confusion matrix for threshold of 0.5\ntable(qualityTrain$PoorCare, predictTrain > 0.5)\n\n# Sensitivity and specificity\n10/25\n70/74\n\n# Confusion matrix for threshold of 0.7\ntable(qualityTrain$PoorCare, predictTrain > 0.7)\n\n# Sensitivity and specificity\n8/25\n73/74\n\n# Confusion matrix for threshold of 0.2\ntable(qualityTrain$PoorCare, predictTrain > 0.2)\n\n# Sensitivity and specificity\n16/25\n54/74\n\n\n\n# Video 6\n\n# Install and load ROCR package\ninstall.packages(\"ROCR\")\nlibrary(ROCR)\n\n# Prediction function\nROCRpred = prediction(predictTrain, qualityTrain$PoorCare)\n\n# Performance function\nROCRperf = performance(ROCRpred, \"tpr\", \"fpr\")\n\n# Plot ROC curve\nplot(ROCRperf)\n\n# Add colors\nplot(ROCRperf, colorize=TRUE)\n\n# Add threshold labels \nplot(ROCRperf, colorize=TRUE, print.cutoffs.at=seq(0,1,by=0.1), text.adj=c(-0.2,1.7))\n",
+    "created" : 1439909826719.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2180817028",
+    "id" : "1288CB0A",
+    "lastKnownWriteTime" : 1434726332,
+    "path" : "~/coursera/Analytics Edge/Unit3_ModelingExpert.R",
+    "project_path" : "Unit3_ModelingExpert.R",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

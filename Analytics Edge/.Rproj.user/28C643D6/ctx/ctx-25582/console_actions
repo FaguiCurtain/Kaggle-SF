@@ -1,0 +1,14 @@
+{
+    "data" : [
+        "> ",
+        "source('~/coursera/Analytics Edge/Unit4_SupremeCourt.R')",
+        "'data.frame':\t566 obs. of  9 variables:\n $ Docket    : Factor w/ 566 levels \"00-1011\",\"00-1045\",..: 63 69 70 145 97 181 242 289 334 436 ...\n $ Term      : int  1994 1994 1994 1994 1995 1995 1996 1997 1997 1999 ...\n $ Circuit   : Factor w/ 13 levels \"10th\",\"11th\",..: 4 11 7 3 9 11 13 11 12 2 ...\n $ Issue     : Factor w/ 11 levels \"Attorneys\",\"CivilRights\",..: 5 5 5 5 9 5 5 5 5 3 ...\n $ Petitioner: Factor w/ 12 levels \"AMERICAN.INDIAN\",..: 2 2 2 2 2 2 2 2 2 2 ...\n $ Respondent: Factor w/ 12 levels \"AMERICAN.INDIAN\",..: ",
+        "2 2 2 2 2 2 2 2 2 2 ...\n $ LowerCourt: Factor w/ 2 levels \"conser\",\"liberal\": 2 2 2 1 1 1 1 1 1 1 ...\n $ Unconst   : int  0 0 0 0 0 1 0 1 0 0 ...\n $ Reverse   : int  1 1 1 1 1 0 1 1 1 1 ...\nError in install.packages : Updating loaded packages\nError in install.packages : Updating loaded packages\nError in install.packages : Updating loaded packages\nError in install.packages : Updating loaded packages\nError in install.packages : Updating loaded packages\n\nRestarting R session...\n\n\nRestarting R session...\n\n\nRestarting R session...\n\n"
+    ],
+    "type" : [
+        0,
+        1,
+        2,
+        2
+    ]
+}

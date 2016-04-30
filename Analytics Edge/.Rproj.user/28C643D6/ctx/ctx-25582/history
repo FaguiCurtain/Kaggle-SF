@@ -1,0 +1,512 @@
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+remove(eBayTrain4)
+remove(a)
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+a
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+plot(clustereBay)
+Cluster1Train
+LogRegClust1
+predLR_C1
+summary(LogRegClust1)
+summary(LogRegClust2)
+summary(LogRegClust3)
+Cluster3Train
+LogRegClust3
+LogRegClust3 <- glm(sold~. -UniqueID,data=Cluster3Train,family="binomial")
+Cluster3Train
+str(Cluster1Train)
+?glm
+str(eBayTrain3)
+str(clusterGroups)
+table(clusterGroups)
+cluster3Train
+Cluster3Train <- subset(eBayTrain3,clusterGroups==3)
+Cluster3Train
+str(Cluster3Train)
+str(Cluster2Train)
+summary(LogRegClust1)
+summary(LogRegClust2)
+summary(LogRegClust3)
+LogRegClust3 <- glm(sold~. -UniqueID,data=Cluster3Train,family="binomial")
+str(Cluster3Train)
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+Cluster1Train
+LogRegClust1
+LogRegClust2
+LogRegClust3
+LogRegClust3 <- glm(sold~. -UniqueID,data=Cluster3Train,family="binomial")
+LogRegClust3 <- glm(sold~. -UniqueID,data=Cluster3Train,family="binomial")
+Cluster3Train <- subset(eBayTrain4,clusterGroups==3)
+head(Cluster3Train)
+summary(Cluster3Train)
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+LogRegClust3 <- glm(sold~. -UniqueID-biddable,data=Cluster3Train,family="binomial")
+summary(Cluster3Train
+summary(Cluster3Train)
+predLR_C1
+Cluster3Train$biddable <- NULL
+LogRegClust3 <- glm(sold~. -UniqueID,data=Cluster3Train,family="binomial")
+summary(Cluster3Train)
+Cluster3Train$Dscratch <- NULL
+LogRegClust3 <- glm(sold~. -UniqueID,data=Cluster3Train,family="binomial")
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+summary(Cluster1Train)
+summary(Cluster3Train)
+summary(Cluster2Train)
+LogRegClust1
+summary(LogRegClust1)
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+summary(LogRegClust1)
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+str(Cluster1Train)
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+?randomForest
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+PredForest_C1
+str(Cluster1Train)
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+plot(Cluster1Train$startprice,Cluster1Train$sold)
+table(Cluster1Train$startprice,Cluster1Train$sold)
+str(Cluster1Train)
+str(Cluster3Train)
+771*0.70.831*771+0.846*319/(771+771+319)
+771*0.77+0.831*771+0.846*319/(771+771+319)
+(771*0.77+0.831*771+0.846*319)/(771+771+319)
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+summary(best.tree_C1)
+summary(tr_C1)
+summary(tr_C1)
+prp(best.tree_C1)
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+summary(tr$finalModel)
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+predLR_C1
+str(predLR_C1)
+str(Cluster1Train)
+temp <- cbind(Cluster1Train$UniqueID,predLR_C1)
+str(predLR_C1)
+?sort
+temp1 <- cbind(Cluster1Train$UniqueID,predLR_C1)
+temp2 <- cbind(Cluster1Train$UniqueID,predLR_C2)
+temp3 <- cbind(Cluster1Train$UniqueID,predLR_C3)
+combisub <- rbind(temp1,temp2,temp3)
+remove(temp)
+combisub
+str(combisub)
+771+771+319
+str(predLR_C1)
+str(predLR_C2)
+str(predLR_C3)
+temp1 <- cbind(Cluster1Train$UniqueID,as.numeric(predLR_C1))
+temp2 <- cbind(Cluster2Train$UniqueID,as.numeric(predLR_C2))
+temp3 <- cbind(Cluster3Train$UniqueID,as.numeric(predLR_C3))
+combisub <- rbind(temp1,temp2,temp3)
+remove(temp1); remove(temp2);remove(temp3)
+combisub
+sort(combisub)
+sort(10:1)
+sort(1:10)
+u <- 10:1
+u
+sort(u)
+u <- 1:10
+sort(u)
+combisub
+ans <- combisub[order(combisub$UniqueID),]
+str(combisub)
+ans <- combisub[order(combisub[,1]),]
+ans
+combisub
+ans
+combisub
+ans
+ans
+str(predLR1)
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+str(ans)
+str(ans)
+head(ans)
+ROCRpred = prediction(ans[,2], eBayTrain4$sold)
+print(as.numeric(performance(ROCRpred, "auc")@y.values))
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT2.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT2.R')
+str(eBayAll)
+str(eBayTrainB)
+str(eBayAll)
+source('~/coursera/Analytics Edge/Kaggle_MIT2.R')
+summary(Cluster3All)
+eBayTrain5
+eBayTrain5 <- eBayTrain3
+library(Hmisc)
+eBayTrain5$pricequartile <- as.factor(cut2(eBayTrain4$startprice,g=4))
+eBayTrain5$startprice <- NULL
+eBayTrain5$UniqueID <- NULL
+eBayTrain5$sold <- NULL
+str(eBayTrain5)
+eBayTrain5 <- eBayTrain3
+library(Hmisc)
+eBayTrain5$pricequartile <- as.factor(cut2(eBayTrain5$startprice,g=4))
+eBayTrain5$startprice <- NULL
+eBayTrain5$UniqueID <- NULL
+eBayTrain5$sold <- NULL
+set.seed(144)
+km = kmeans(eBayTrain5, centers = 3)
+str(eBayTrain5)
+?kmeans
+eBayTrain5 <- eBayTrain3
+library(Hmisc)
+eBayTrain5$pricequartile <- as.factor(cut2(eBayTrain5$startprice,g=4))
+eBayTrain5$startprice <- NULL
+eBayTrain5$UniqueID <- NULL
+eBayTrain5$sold <- NULL
+eBayTrain5mat <- as.matrix(eBayTrain5)
+set.seed(144)
+km = kmeans(eBayTrain5mat, centers = 3)
+km
+str(eBayTrain5)
+eBayTrain5 <- eBayTrain3
+library(Hmisc)
+eBayTrain5$pricequartile <- as.factor(cut2(eBayTrain5$startprice,g=4))
+eBayTrain5$startprice <- NULL
+eBayTrain5$UniqueID <- NULL
+eBayTrain5$sold <- NULL
+eBayTrain5mat <- as.matrix(as.numeric(eBayTrain5))
+set.seed(144)
+km = kmeans(eBayTrain5mat, centers = 3)
+eBayTrain5mat
+eBayTrain5mat
+eBayTrain5
+str(eBayTrain5)
+x <- as.numeric(eBayTrain5$condition)
+x
+str(eBayTrain5)
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+str(eBayTrain5)
+eBayTrain5$Dexcel <- as.numeric(eBayTrain5$excel)
+table(eBayTrain5$Dexcel)
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+km
+table(km$cluster)
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+clusterTrain
+str(clusterTrain)
+km$cluster
+str(eBayTest)
+eBayTrain5$pricequartile
+str(eBayTrain5$pricequartile)
+str(as.factor(cut2(eBayTrain5$startprice,g=4)))
+str(cut2(eBayTrain5$startprice,g=4))
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+eBayTrain5$pricequartile
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+head(cut2(eBayTrain5$startprice,g=4))
+?cut
+?cut2
+cuts <- cut2(eBayTrain5$startprice,g=4,onlycuts=TRUE)
+cutsTrain <- cut2(eBayTrain5$startprice,g=4,onlycuts=TRUE)
+remove(cuts)
+cut2(eBayTrain5$startprice,cuts=cutsTrain)
+as.numeric(cut2(eBayTrain5$startprice,cuts=cutsTrain))
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+clusterTrain
+str(eBayTrain5)
+kmclusterTrain1 <- subset(eBayTrain5,clusterTrain==1)
+kmclusterTrain2 <- subset(eBayTrain5,clusterTrain==2)
+kmclusterTrain3 <- subset(eBayTrain5,clusterTrain==3)
+summary(kmclusterTrain1)
+kmclusterTrain1 <- subset(eBayTrain3,clusterTrain==1)
+kmclusterTrain2 <- subset(eBayTrain3,clusterTrain==2)
+kmclusterTrain3 <- subset(eBayTrain3,clusterTrain==3)
+str(kmclusterTrain1)
+str(kmclusterTrain2)
+str(kmclusterTrain3)
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+summary(LogRegkmClust1)
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+str(cluster1Train)
+str(kmcluster1Train)
+str(kmcluster2Train)
+str(kmcluster3Train)
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+str(cluster1Train)
+str(kmcluster1Train)
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+kmCluster5Train
+km
+clusterTrain
+km$cluster
+kmcluster5Train <- subset(eBayTrain3,clusterTrain==5)
+kmcluster5Train
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+str(eBayTrain3)
+str(eBayTest3)
+summary(LogRegkmClust1)
+summary(LogRegkmClust2)
+summary(LogRegkmClust3)
+summary(LogRegkmClust4)
+summary(LogRegkmClust5)
+eBayTest5 <- eBayTest3
+eBayTest5$pricequartile <- as.numeric(cut2(eBayTest5$startprice,cuts=cutsTrain))
+eBayTest5$pricequartile
+source.with.encoding('~/coursera/Analytics Edge/Kaggle_MIT4.R', encoding='UTF-8')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+str(eBayTest5)
+str(eBayTrain5)
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+predTestLR_kmC1
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+ans
+predTestLR3
+predTestLR_kmC1
+ans
+u <- ans>0.5
+v <- predTestLR3>0.5
+u==v
+u
+v
+u
+ans
+u <- ans[,2]>0.5
+v <- predTestLR3>0.5
+u==v
+table(u==v)
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+u <- ans[,2]>0.5
+tabme(u==v)
+table(u==v)
+ans
+eBayTest$UniqueID
+ans$UniqueID
+ans[,1]
+table(u==v)
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+submission
+predLR3
+predTestLR3
+ans
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+submission
+str(submission)
+temp <- read.csv("submission.csv")
+temp
+str(eBayTest)
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT3.R')
+u <- predTestLR3>0.5
+v <- ans[,2]>0.5
+table(u==v)
+ans[,2]
+submission
+check <- read.csv("submission.csv")
+check
+install.packages(xgboost)
+install.packages("xgboost")
+require(devtools)
+library(devtools)
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+tr
+PredForest
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+install.packages("tm")
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+install.packages("SnowballC")
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+install.packages("wordcloud")
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+install.packages("e1071")
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+str(eBayTrain3)
+PredForest
+best.tree.pred
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+install.packages("Misc")
+install.packages("HMisc")
+install.packages("Hmisc")
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+install.packages("flexclust")
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+km
+eBayTrain5mat
+tr(eBayTrainmat)
+tr(eBayTrain5mat)
+str(eBayTrain5mat)
+head(eBayTrain5mat)
+str(eBayTrain5)
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+str(eBayTest5)
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+clusterTest
+predTestLR_kmC1
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+ans[,2]
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4.R')
+ans
+predTestLR3
+table(predTESTLR3>cutoff,ans[,2]>cutoff)
+table(predTestLR3>cutoff,ans[,2]>cutoff)
+table(predTestLR3>cutoff==ans[,2]>cutoff)
+table((predTestLR3>cutoff)==(ans[,2]>cutoff))
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+ans[,2]
+check <- read.csv("submission.csv")
+check
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+str(kmcluster1Train)
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+best.tree.pred1
+resBestTree <- table(eBayTrain3$sold,best.tree.pred>cutoff)
+best.tree.pred
+best.tree.pred1
+table(best.tree1)
+best.tree1
+prp(best.tree1)
+prp(best.tree2)
+prp(best.tree3)
+prp(best.tree4)
+prp(best.tree5)
+prp(best.tree1)
+best.tree.pred1
+best.tree.pred2
+best.tree.pred5
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+best.tree.pred1
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+best.tree.pred1
+str(best.tree.pred1)
+str(kmcluster1Train$sold)
+summary(kmcluster1Train$sold)
+136/157
+summary(best.tree.pred1[,2])
+best.tree.pred1[,2]
+str(best.tree.pred1)
+str(best.tree.pred1[,2])
+best.tree.pred1[,2]>cutoff
+str(best.tree.pred1[,2]>cutoff)
+kmcluster1Train$sold
+table(kmcluster1Train$sold,best.tree.pred1[,2]>cutoff)
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+accBestTree2
+resBestTree2
+resBestTree1
+table(kmcluster2Train,best.tree.pred2[,2]>cutoff)
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+resBestTree2
+resBestTree5
+311/450
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+resBestTree5
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+ans
+str(ans)
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+best.tree.pred3
+str(kmcluster3Train$UniqueID)
+str(as.numeric(best.tree.pred3)[,2])
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+eBayTrain3
+str(eBayTrain3)
+source('~/coursera/Analytics Edge/Kaggle_MIT4RF.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+PredForest
+PredForest=predict(eBayForest,type="prob")
+str(eBayTrain3)
+PredForest
+predForest <- predForest1
+predForest1 <- predForest
+PredForest1 <-PredForest
+PredForest1
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+PredForest
+PredForest <- predict(eBayForest,type="prob")
+PredForest
+PredForest[,2]
+PredForest1
+PredForest
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+best.tree.pred
+print(predict(best.tree,type="prob"))
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+str(eBayTrain3)
+hist(eBayTrain3$startprice)
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT1.R')
+source('~/coursera/Analytics Edge/Kaggle_MIT.R')
+PredForest
+predict(best.tree,type="class")
+predict(best.tree)
+predict(best.tree,type="prob")
+predict(best.tree,type="response")
+predict(best.tree,newdata=eBayTesttype="response")
+predict(best.tree,newdata=eBayTest,type="response")
+predict(best.tree,newdata=eBayTest,type="prob")
+str(eBayTest)
+predict(best.tree,newdata=eBayTest3,type="prob")
+str(eBayTest3)
+predict(best.tree,newdata=eBayTest3,type="class")
+predict(best.tree,newdata=eBayTest3,type="response")
+predict(best.tree,newdata=eBayTest3,type="prob")
+str(eBayTrain3)
+str(eBayTest3)
+str(best.tree)
+str(eBayTree1)
+str(best.tree)
+source('~/coursera/Analytics Edge/Unit4_SupremeCourt.R')

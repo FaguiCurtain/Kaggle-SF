@@ -1,0 +1,17 @@
+{
+    "contents" : "# Unit 3, Recitation\n\n# Video 2\n\n# Read in data\npolling = read.csv(\"PollingData.csv\")\nstr(polling)\ntable(polling$Year)\nsummary(polling)\n\n# Install and load mice package\ninstall.packages(\"mice\")\nlibrary(mice)\n\n# Multiple imputation\nsimple = polling[c(\"Rasmussen\", \"SurveyUSA\", \"PropR\", \"DiffCount\")]\nsummary(simple)\nset.seed(144)\nimputed = complete(mice(simple))\nsummary(imputed)\npolling$Rasmussen = imputed$Rasmussen\npolling$SurveyUSA = imputed$SurveyUSA\nsummary(polling)\n\n\n\n# Video 3\n\n# Subset data into training set and test set\nTrain = subset(polling, Year == 2004 | Year == 2008)\nTest = subset(polling, Year == 2012)\n\n# Smart Baseline\ntable(Train$Republican)\nsign(20)\nsign(-10)\nsign(0)\ntable(sign(Train$Rasmussen))\ntable(Train$Republican, sign(Train$Rasmussen))\n\n\n\n# Video 4\n\n# Multicollinearity\ncor(Train)\nstr(Train)\ncor(Train[c(\"Rasmussen\", \"SurveyUSA\", \"PropR\", \"DiffCount\", \"Republican\")])\n\n# Logistic Regression Model\nmod1 = glm(Republican~PropR, data=Train, family=\"binomial\")\nsummary(mod1)\n\n# Training set predictions\npred1 = predict(mod1, type=\"response\")\ntable(Train$Republican, pred1 >= 0.5)\n\n# Two-variable model\nmod2 = glm(Republican~SurveyUSA+DiffCount, data=Train, family=\"binomial\")\npred2 = predict(mod2, type=\"response\")\ntable(Train$Republican, pred2 >= 0.5)\nsummary(mod2)\n\n\n\n# Video 5\n\n# Smart baseline accuracy\ntable(Test$Republican, sign(Test$Rasmussen))\n\n# Test set predictions\nTestPrediction = predict(mod2, newdata=Test, type=\"response\")\ntable(Test$Republican, TestPrediction >= 0.5)\n\n# Analyze mistake\nsubset(Test, TestPrediction >= 0.5 & Republican == 0)",
+    "created" : 1439909796654.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "484905088",
+    "id" : "C220285D",
+    "lastKnownWriteTime" : 1435849550,
+    "path" : "~/coursera/Analytics Edge/Unit3_Recitation.R",
+    "project_path" : "Unit3_Recitation.R",
+    "properties" : {
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
